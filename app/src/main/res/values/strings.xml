@@ -2,4 +2,7 @@
     <string name="app_name">ComunicaT</string>
     <string name="log_in">Log In</string>
     <string name="register">Register</string>
+    <string name="loginEmail">Email</string>
+    <string name="loginPass">Contraseña</string>
+    <string name="userLogin">Entra</string>
 </resources>

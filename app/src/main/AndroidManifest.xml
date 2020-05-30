@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".NoticiasActivity"></activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
