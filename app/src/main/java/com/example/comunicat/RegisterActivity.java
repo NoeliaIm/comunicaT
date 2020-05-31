@@ -17,7 +17,7 @@ import java.sql.SQLException;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends MainActivity {
 
     Connection conexionMySQL = null;
     private Button btnRegistro;
@@ -79,8 +79,8 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(intent);
             }catch (MySQLIntegrityConstraintViolationException e){
                 runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
+                        @Override
+                        public void run() {
                         Toast toast= Toast.makeText(getApplicationContext(), "El email ya está en uso", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();

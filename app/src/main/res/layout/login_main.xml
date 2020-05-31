@@ -9,20 +9,23 @@
         android:id="@+id/userEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_margin="10dp"
         android:gravity="center"
-        android:hint="@string/loginEmail"/>
+        android:hint="@string/loginEmail"
+        android:inputType="textEmailAddress"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/userPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_margin="10dp"
         android:gravity="center"
         android:inputType="textPassword"
-        android:hint="@string/loginPass"/>
+        android:hint="@string/loginPass"
+        android:autofillHints="" />
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"

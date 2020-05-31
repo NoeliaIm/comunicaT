@@ -2,10 +2,14 @@ package com.example.comunicat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.comunicat.utils.Constants;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,7 +20,7 @@ import java.sql.SQLException;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends MainActivity {
     Connection conexionMySQL = null;
     private Button btnLogin;
     private EditText etUserEmail, etUserPass;
@@ -53,6 +57,18 @@ public class LoginActivity extends AppCompatActivity {
                 if (resul.first()) {
                     Intent intent = new Intent(LoginActivity.this, NoticiasActivity.class);
                     startActivity(intent);
+                }else {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast toast = Toast.makeText(getApplicationContext(), "Login incorrecto", Toast.LENGTH_LONG);
+                            toast.setGravity(Gravity.CENTER, 0, 0);
+                            toast.show();
+                            finish();
+                            Intent intent= new Intent(LoginActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                        }
+                    });
                 }
             } catch (SQLException se) {
                 System.out.println("oops! No se puede conectar. Error: " + se.toString());
