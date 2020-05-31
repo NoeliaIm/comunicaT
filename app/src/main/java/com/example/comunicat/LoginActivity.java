@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             userPass = etUserPass.getText().toString();
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                conexionMySQL = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/androidapp", "root", "4xM4aJk4E9!");
+                conexionMySQL = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/androidapp?useSSL=false", "root", "4xM4aJk4E9!");
                 PreparedStatement st = conexionMySQL.prepareStatement("select * from androidapp.users where users.email = ? and users.password = ?");
                 st.setString(1, userEmail);
                 st.setString(2, userPass);

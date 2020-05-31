@@ -1,9 +1,14 @@
 package com.example.comunicat;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -30,7 +35,13 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-
+    public static void  clearForm(EditText nombre, EditText apellido, EditText email, EditText pass, EditText phone){
+        nombre.setText("");
+        apellido.setText("");
+        email.setText("");
+        pass.setText("");
+        phone.setText("");
+    }
     Thread sqlThread = new Thread() {
         public void run() {
             nombre = findViewById(R.id.textName);
@@ -48,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
                 // "jdbc:mysql://IP:PUERTO/DB", "USER", "PASSWORD");
                 // Si estás utilizando el emulador de android y tenes el mysql en tu misma PC no utilizar 127.0.0.1 o localhost como IP, utilizar 10.0.2.2
                 conexionMySQL = DriverManager.getConnection(
-                        "jdbc:mysql://10.0.2.2:3306/androidapp", "root", "4xM4aJk4E9!");
+                        "jdbc:mysql://10.0.2.2:3306/androidapp?verifyServerCertificate=false&useSSL=true", "root", "4xM4aJk4E9!");
                 //En el stsql se puede agregar cualquier consulta SQL deseada.
                 PreparedStatement st = conexionMySQL.prepareStatement("insert into androidapp.users (name, surname, phone, email, password ) values (?,?,?,?,?)");
                 st.setString(1, nombreIn);
@@ -58,6 +69,26 @@ public class RegisterActivity extends AppCompatActivity {
                 st.setString(5, passIn);
                 st.executeUpdate();
                 conexionMySQL.close();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        clearForm(nombre, apellido, email, pass, phone);
+                    }
+                });
+                Intent intent = new Intent(RegisterActivity.this, NoticiasActivity.class);
+                startActivity(intent);
+            }catch (MySQLIntegrityConstraintViolationException e){
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast toast= Toast.makeText(getApplicationContext(), "El email ya está en uso", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        finish();
+                        Intent intent = new Intent(RegisterActivity.this, RegisterActivity.class);
+                        startActivity(intent);
+                    }
+                });
             } catch (SQLException se) {
                 System.out.println("oops! No se puede conectar. Error: " + se.toString());
             } catch (ClassNotFoundException e) {
@@ -65,6 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         }
     };
+
 
 }
 

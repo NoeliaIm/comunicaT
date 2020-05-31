@@ -5,4 +5,10 @@
     <string name="loginEmail">Email</string>
     <string name="loginPass">Contraseña</string>
     <string name="userLogin">Entra</string>
+    <string name="apellido">Apellido</string>
+    <string name="nombre">Nombre</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="email">Email</string>
+    <string name="tel_fono">Teléfono</string>
+    <string name="registro">Registro</string>
 </resources>
