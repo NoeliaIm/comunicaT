@@ -8,14 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.comunicat.notes.NoticiasActivity;
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterActivity extends MainActivity {
 

@@ -20,7 +20,7 @@
         </activity>
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".NoticiasActivity"></activity>
+        <activity android:name=".notes.NoticiasActivity"></activity>
         <activity android:name=".DetailNoticeActiviy"></activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

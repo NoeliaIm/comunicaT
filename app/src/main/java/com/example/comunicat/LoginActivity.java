@@ -6,10 +6,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.comunicat.utils.Constants;
+import com.example.comunicat.notes.NoticiasActivity;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,7 +17,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends MainActivity {
     Connection conexionMySQL = null;
