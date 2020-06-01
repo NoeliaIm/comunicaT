@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center">
 
     <TextView
-        android:id="@+id/noteDetail"
+        android:id="@+id/noteDetailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Detalle de nota"
-        android:layout_margin="50dp"
-        android:textSize="16dp"/>
+        android:textSize="26dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/noteDetailDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de nota"
+        android:layout_marginBottom="8dp"
+        android:textSize="19dp"/>
+
+    <TextView
+        android:id="@+id/noteDetailBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cuerpo de nota"
+        android:textSize="15dp"/>
 
 </LinearLayout>

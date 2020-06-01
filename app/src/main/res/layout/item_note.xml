@@ -22,6 +22,12 @@
             android:textStyle="bold"
             android:textSize="15sp" />
         <TextView
+            android:id="@+id/tvItemNoteDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:text="fecha de la nota"/>
+        <TextView
             android:id="@+id/tvItemNoteBody"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

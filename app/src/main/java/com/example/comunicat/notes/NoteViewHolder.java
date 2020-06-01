@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class NoteViewHolder extends RecyclerView.ViewHolder {
 
     LinearLayout llNoteContainer;
-    TextView tvItemNoteTitle, tvItemNoteBody;
+    TextView tvItemNoteTitle, tvItemNoteBody, tvItemNoteDate;
 
     public NoteViewHolder(@NonNull View v) {
         super(v);
@@ -20,5 +20,6 @@ public class NoteViewHolder extends RecyclerView.ViewHolder {
         llNoteContainer = v.findViewById(R.id.llNoteContainer);
         tvItemNoteTitle= v.findViewById(R.id.tvItemNoteTitle);
         tvItemNoteBody= v.findViewById(R.id.tvItemNoteBody);
+        tvItemNoteDate= v.findViewById(R.id.tvItemNoteDate);
     }
 }
