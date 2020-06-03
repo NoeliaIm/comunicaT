@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/noteTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Escribe el título de la noticia"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/noteBody"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="20dp"
+        android:hint="Escribe la noticia"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:background="@drawable/border"/>
+
+    <Button
+        android:id="@+id/enviarNoticia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar"/>
+</LinearLayout>

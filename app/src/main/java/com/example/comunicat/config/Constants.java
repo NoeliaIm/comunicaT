@@ -1,4 +1,4 @@
-package com.example.comunicat.utils;
+package com.example.comunicat.config;
 
 public class Constants {
     public static final String PREFS_USER = "userLogged";

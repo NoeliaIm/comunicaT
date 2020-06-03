@@ -22,6 +22,8 @@
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".notes.NoticiasActivity"></activity>
         <activity android:name=".notes.DetailNoticeActiviy"></activity>
+        <activity android:name=".admin.WriteNotice"></activity>
+        <activity android:name=".admin.RegisterAdmin"></activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

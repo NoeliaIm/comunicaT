@@ -1,13 +1,16 @@
 package com.example.comunicat;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.comunicat.config.PreferencesManager;
 import com.example.comunicat.notes.NoticiasActivity;
 
 import java.sql.Connection;
@@ -23,6 +26,8 @@ public class LoginActivity extends MainActivity {
     private Button btnLogin;
     private EditText etUserEmail, etUserPass;
     private String userEmail, userPass;
+
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,7 +58,11 @@ public class LoginActivity extends MainActivity {
                 st.setString(2, userPass);
                 ResultSet resul = st.executeQuery();
                 if (resul.first()) {
+//                    setSharedPreferences();
                     Intent intent = new Intent(LoginActivity.this, NoticiasActivity.class);
+                    if(resul.getBoolean(7)){
+                        intent.putExtra("isAdmin", true);
+                    }
                     startActivity(intent);
                 }else {
                     runOnUiThread(new Runnable() {
@@ -75,4 +84,13 @@ public class LoginActivity extends MainActivity {
             }
         }
     };
+
+    public void setSharedPreferences(){
+        sharedPreferences= getSharedPreferences(PreferencesManager.PREFERENCIASAPP, MODE_PRIVATE);
+        final int logged= 1;
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+        editor.putInt(PreferencesManager.LOGGED, logged);
+        editor.apply();
+        Log.d("preferences", sharedPreferences.getString("logged", ""));
+    }
 }

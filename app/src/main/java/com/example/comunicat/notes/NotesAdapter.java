@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.comunicat.R;
 import com.example.comunicat.notes.models.Nota;
-import com.example.comunicat.utils.Constants;
+import com.example.comunicat.config.Constants;
 
 import java.util.ArrayList;
 

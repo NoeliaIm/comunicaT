@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import com.example.comunicat.MainActivity;
 import com.example.comunicat.R;
-import com.example.comunicat.utils.Constants;
+import com.example.comunicat.config.Constants;
 
 public class DetailNoticeActiviy extends MainActivity {
     @Override
