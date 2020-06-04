@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.example.comunicat.MainActivity;
 import com.example.comunicat.R;
-import com.example.comunicat.RegisterActivity;
 import com.example.comunicat.notes.NoticiasActivity;
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 

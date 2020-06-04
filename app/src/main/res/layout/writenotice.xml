@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="Escribe el título de la noticia"
-        android:inputType="text" />
+        android:inputType="text"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/noteBody"
@@ -22,7 +23,8 @@
         android:hint="Escribe la noticia"
         android:inputType="textMultiLine"
         android:singleLine="false"
-        android:background="@drawable/border"/>
+        android:background="@drawable/border"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/enviarNoticia"

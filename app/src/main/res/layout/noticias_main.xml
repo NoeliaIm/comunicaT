@@ -10,14 +10,22 @@
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:padding="5dp"
-        android:text="Noticias"
-        android:textSize="20dp"/>
+        android:text="@string/noticias"
+        android:textSize="20sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rdNotes"
-        android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="440dp"
+        android:layout_margin="20dp" />
+    <Button
+        android:id="@+id/eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eliminar_cuenta"
+        android:layout_gravity="right"
+        android:layout_marginRight="15dp"
+        android:onClick="eliminar"
+        android:layout_marginEnd="15dp" />
 
 </LinearLayout>

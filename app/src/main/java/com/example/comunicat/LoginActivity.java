@@ -63,6 +63,7 @@ public class LoginActivity extends MainActivity {
                     if(resul.getBoolean(7)){
                         intent.putExtra("isAdmin", true);
                     }
+                    intent.putExtra("email", resul.getString(5));
                     startActivity(intent);
                 }else {
                     runOnUiThread(new Runnable() {

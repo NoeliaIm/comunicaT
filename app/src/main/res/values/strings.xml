@@ -11,4 +11,13 @@
     <string name="email">Email</string>
     <string name="tel_fono">Teléfono</string>
     <string name="registro">Registro</string>
+    <string name="noticias">Noticias</string>
+    <string name="eliminar_cuenta">Eliminar cuenta</string>
+    <string name="ver_noticias">Ver Noticias</string>
+    <string name="escribir_noticias">Escribir noticias</string>
+    <string name="registrar_usuario">Registrar usuario</string>
+    <string name="detalle_de_nota">Detalle de nota</string>
+    <string name="fecha_de_nota">Fecha de nota</string>
+    <string name="cuerpo_de_nota">Cuerpo de nota</string>
+    <string name="la_nota">La nota</string>
 </resources>

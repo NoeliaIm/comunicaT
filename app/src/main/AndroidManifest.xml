@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.comunicat">
 
     <application
@@ -10,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,12 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".notes.NoticiasActivity"></activity>
-        <activity android:name=".notes.DetailNoticeActiviy"></activity>
-        <activity android:name=".admin.WriteNotice"></activity>
-        <activity android:name=".admin.RegisterAdmin"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".notes.NoticiasActivity" />
+        <activity android:name=".notes.DetailNoticeActiviy" />
+        <activity android:name=".admin.WriteNotice" />
+        <activity android:name=".admin.RegisterAdmin" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

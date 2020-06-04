@@ -8,23 +8,23 @@
         android:id="@+id/noteDetailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Detalle de nota"
-        android:textSize="26dp"
+        android:text="@string/detalle_de_nota"
+        android:textSize="26sp"
         android:layout_marginBottom="10dp"/>
 
     <TextView
         android:id="@+id/noteDetailDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fecha de nota"
+        android:text="@string/fecha_de_nota"
         android:layout_marginBottom="8dp"
-        android:textSize="19dp"/>
+        android:textSize="19sp"/>
 
     <TextView
         android:id="@+id/noteDetailBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cuerpo de nota"
-        android:textSize="15dp"/>
+        android:text="@string/cuerpo_de_nota"
+        android:textSize="15sp"/>
 
 </LinearLayout>

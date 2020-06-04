@@ -1,11 +1,14 @@
 package com.example.comunicat.notes;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.comunicat.MainActivity;
 import com.example.comunicat.R;
@@ -15,6 +18,7 @@ import com.example.comunicat.notes.models.Nota;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -30,6 +34,7 @@ public class NoticiasActivity extends MainActivity {
     Connection conexionMySQL = null;
     ArrayList<Nota> noteList = new ArrayList<>();
     Boolean isAdmin = false;
+    String email="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,7 @@ public class NoticiasActivity extends MainActivity {
         setContentView(R.layout.noticias_main);
         setRecyclerViewData();
         isAdmin = getIntent().getBooleanExtra("isAdmin", false);
+        email= getIntent().getStringExtra("email");
     }
 
     @Override
@@ -104,4 +110,45 @@ public class NoticiasActivity extends MainActivity {
             }
         }
     };
+
+    public void eliminar(View v) {
+        new AlertDialog.Builder(NoticiasActivity.this)
+                .setTitle("Eliminar cuenta")
+                .setMessage("Confirma que deseas elimiar la cuenta")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        sqlThread2.start();
+                        dialog.cancel();
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                })
+                .show();
+    }
+
+    Thread sqlThread2 = new Thread() {
+        public void run() {
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                conexionMySQL = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/androidapp?useSSL=false", "root", "4xM4aJk4E9!");
+                PreparedStatement st = conexionMySQL.prepareStatement("delete from androidapp.users where users.email = ? ");
+                st.setString(1, email);
+                int resul = st.executeUpdate();
+                if (resul==1) {
+                    Intent intent = new Intent(NoticiasActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            } catch (SQLException se) {
+                System.out.println("oops! No se puede conectar. Error: " + se.toString());
+            } catch (ClassNotFoundException e) {
+                System.out.println("oops! No se encuentra la clase. Error: " + e.getMessage());
+            }
+        }
+    };
+
+
 }

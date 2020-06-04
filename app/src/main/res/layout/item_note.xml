@@ -18,20 +18,20 @@
             android:id="@+id/tvItemNoteTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="La nota"
+            android:text="@string/la_nota"
             android:textStyle="bold"
             android:textSize="15sp" />
         <TextView
             android:id="@+id/tvItemNoteDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13dp"
+            android:textSize="13sp"
             android:text="fecha de la nota"/>
         <TextView
             android:id="@+id/tvItemNoteBody"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12dp"
+            android:textSize="12sp"
             android:text="contenido de la nota"/>
 
     </LinearLayout>
